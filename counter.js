@@ -25,7 +25,8 @@ function  superCounter(sentence){
     return a + b;
   });
   var avg = sum/wordsArray.length;
-  console.log(words + ' words', characters + ' characters', avg + ' chars avg word length', spaces + ' spaces');
+  // console.log(words + ' words', characters + ' characters', avg + ' chars avg word length', spaces + ' spaces');
+  return {words: words, characters:characters, avg: avg, spaces: spaces};
 }
 
-superCounter("Count me in");
+console.log(superCounter("Count me in"));

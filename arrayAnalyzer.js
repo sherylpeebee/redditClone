@@ -11,34 +11,45 @@
 
 
 function arrayAnalyzer(numbers){
-  console.log(arguments);
+  var numberArray = [];
+  var analysis = {odds: 0, negative: 0, avg: 0, median: 0};
   for(var key in arguments) {
-    // console.log(key);
     var value = arguments[key];
-    console.log(value);
+    if (value < 0){
+      analysis.negative++;
+      /*
+      ORRRRR (COOL STUFFF AHEAD!!!) you could do analysis['negative']++
+      NOTICE!!: When using bracket notation, if the key is a variable, use no quotes. it is not a string.
+      BUT!!: If the key has already been set to a literal name (e.g. in the "analysis" object, we've labeled the key 'negative'),
+      it MUST be called as a string.
+      */
+    }
+    numberArray.push(value);
+    if (value % 2 !== 0){
+      analysis.odds++;
+    }
+  }
+  var sum = numberArray.reduce(function(a, b){
+    return a + b;
+    });
+  analysis.avg = (sum/numberArray.length).toFixed(2)*1;
+  var orderedNumbers = numberArray.sort(function(a, b){ return a-b; });
+  console.log(orderedNumbers);
+  if (orderedNumbers.length % 2 !== 0){
+    analysis.median = orderedNumbers[Math.floor(orderedNumbers.length/2)];
+  } else{
+      var index1 = (orderedNumbers.length/2);
+      var index2 = index1 - 1;
+      analysis.median = (orderedNumbers[index1]+orderedNumbers[index2]/2).toFixed(2);
+    }
+
+  return analysis;
 }
-  // var numberString = numbers.toString();
-  // var numberArray = numberString.split(',');
-  // console.log(numberArray);
-  //
-  // var results = {odds: 0, negatives: 0, avg: 0, median: 0};
-  // numbers.forEach(function(number){
-  //   if (number%2 !== 0){
-  //    results.odds += 1;
-  //   }
-  // });
-
-}
 
 
-// var vals = Object.keys(obj).map(function (key) {
-//     return obj[key];
-// });
-
-// use vals array
 
 
-arrayAnalyzer(7, -3, 0, 12, 44, -5, 3);
+console.log(arrayAnalyzer(7, -3, 0, 12, 44, -5, 3));
 
 // would return:
 
