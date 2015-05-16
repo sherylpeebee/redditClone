@@ -1,0 +1,64 @@
+body{
+  background-color:#3C3C3C
+  }
+
+.blue-box{
+  background-color: #0391AD;
+  height: 500px;
+  width: 1139px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 50%;
+  text-align: center;
+}
+
+.product-view{
+  display: inline-block;
+  margin-top: 55px;
+  margin-left: 10px;
+  height: 380px;
+  width: 300px;
+  background-color: white;
+  border-radius: 3px;
+  -webkit-box-shadow: 10px 10px 37px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 37px -6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 37px -6px rgba(0,0,0,0.75);
+}
+
+.veggies{
+  height: 200px;
+  width: 300px;
+  background-image: url("assets/fresh-veggies.jpg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.raspberry{
+  height: 200px;
+  width: 300px;
+  background-image: url("assets/3-raspberries.jpg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.kiwi{
+  height: 200px;
+  width: 300px;
+  background-image: url("assets/sliced-kiwi.jpg");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+
+  .pricing{
+    height: 180px;
+    width: 300px;
+    background-color: #F8F8F8;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -webkit-box-shadow: 1px -2px 6px -1px rgba(171,146,152,1);
+    -moz-box-shadow: 1px -2px 6px -1px rgba(171,146,152,1);
+    box-shadow: 1px -2px 6px -1px rgba(171,146,152,1);
+  }
