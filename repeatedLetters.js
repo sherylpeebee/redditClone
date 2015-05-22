@@ -8,6 +8,7 @@
 // Would select the words:
 //
 // ["attribute", "success"]
+//I didn't read the question carefully enough; "solved" the wrong problem (for repeated consecutive letters instead of totals)
 
 function wordSelector(sentence){
  var matches = [];
