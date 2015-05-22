@@ -28,9 +28,9 @@ function age(year, month, day){
   if(days>30 && months>11){
     return "years + ' years'";
   } else if(days>30){
-    return "months + ' months,' + years + ' years'";
+    return months + ' months,' + years + ' years';
   } else{
-    return "days + ' days,' + months + ' months,' + years + ' years'";
+    return days + ' days,' + months + ' months,' + years + ' years';
   }
 }
 
@@ -40,4 +40,4 @@ function age(year, month, day){
 
 
 
-age(2017, 1, 7);
+console.log(age(2017, 1, 7));
