@@ -8,11 +8,24 @@
 // assert_equal(decodeStr("01R34E6D|2 5 7"), "RED");
 
 function decodeStr(str){
-  var keyCodeObject = str.split('|');
-  console.log(keyCodeObject);
-  keyCodeObject.split(',');
-  //the above gives me errors!
+  var keyCodeArray = str.split('|');
+  var codedMessage = keyCodeArray[0];
+  var decoder=keyCodeArray[1];
+  var zeroedMessage = [];
+  var messageArray = [];
 
+
+  for(var i=0; i<codedMessage.length; i++){
+    zeroedMessage.push(codedMessage.charAt(decoder[i]));
+  }
+  var counter = 0;
+  while (counter < zeroedMessage.length){
+    if (zeroedMessage[counter] !== '0'){
+      messageArray.push(zeroedMessage[counter]);
+    }
+    counter ++;
+  }
+return messageArray.join('');
 }
 
 var x = decodeStr("01R34E6D|2 5 7");
