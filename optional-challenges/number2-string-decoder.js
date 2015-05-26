@@ -15,9 +15,13 @@ function decodeStr(str){
   var messageArray = [];
 
 
-  for(var i=0; i<codedMessage.length; i++){
-    zeroedMessage.push(codedMessage.charAt(decoder[i]));
+  for(var i=0; i<=codedMessage.length; i++){
+    // zeroedMessage.push(codedMessage.charAt(decoder[i]));
+    console.log(keyCodeArray);
+    // console.log(decoder[i]);
+    // console.log(codedMessage.charAt(decoder[i]));
   }
+  // console.log(zeroedMessage);
   var counter = 0;
   while (counter < zeroedMessage.length){
     if (zeroedMessage[counter] !== '0'){
@@ -28,18 +32,5 @@ function decodeStr(str){
 return messageArray.join('');
 }
 
-var x = decodeStr("01R34E6D|2 5 7");
+var x = decodeStr("sfGuisOthO12D|2 6 9 12");
 console.log(x);
-
-
-
-// below is what I tried earlier thinking that since it was behaving like an object, it might work...?
-//it did, but then the resulting array still behaved like an object. so i got nowhere with it.
-
-//   var value;
-//   var keyCodeArray = [];
-// for(var key in keyCodeObject) {
-// value = keyCodeObject[key];
-// console.log(value);
-// keyCodeArray.push(value);
-// }
