@@ -10,21 +10,40 @@
 // ["attribute", "success"]
 //I didn't read the question carefully enough; "solved" the wrong problem (for repeated consecutive letters instead of totals)
 
-function wordSelector(sentence){
- var matches = [];
- var topWords = {};
+function wordSelector(string) {
 
-var split1 = sentence.split(' ');
-console.log(split1);
- split1.forEach(function(e){
-   for(var i=0; i<e.length; i++){
-     if(e[i]===e[i-1]){
-     matches.push(e, e[i]===e[i-1]);
-     }
-   }
- });
+    var wordsInSentence = string.split(' ');
+    wordsInSentence.forEach(function(word){
+      var matches = {};
+      for (var i=0; i<word.length; i++) {
+        var character = word.charAt(i);
+        if (matches[character]) {
+          matches[character]++;
+        } else {
+          matches[character] = 1;
+        }
+      }
+      console.log(matches);
+      return matches;
+    });
 
- console.log(matches);
 }
 
 wordSelector("I attribute my success to this: I never gave or took any excuse. –Florence Nightingale");
+
+// function wordSelector(sentence){
+//  var matches = [];
+//  var topWords = {};
+//
+// var split1 = sentence.split(' ');
+// console.log(split1);
+//  split1.forEach(function(e){
+//    for(var i=0; i<e.length; i++){
+//      if(e[i]===e[i-1]){
+//      matches.push(e, e[i]===e[i-1]);
+//      }
+//    }
+//  });
+//
+//  console.log(matches);
+// }
