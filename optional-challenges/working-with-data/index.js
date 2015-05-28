@@ -13,7 +13,6 @@ function init(){
       var siteAdmin = 0;
       var loginUnder5 = 0;
       data.forEach(function(userObject){
-        console.log(typeof userObject.site_admin);
 
         if(userObject.site_admin === true){
           siteAdmin++;
@@ -44,7 +43,12 @@ function init(){
       });
       // console.log(userType);
       // console.log(siteAdmin);
-      console.log({loginUnder5: loginUnder5, Users: userType.User, Organizations: userType.Organization, siteAdmin: siteAdmin});
+      var result = {loginUnder5: loginUnder5, Users: userType.User, Organizations: userType.Organization, siteAdmin: siteAdmin};
+      $('#loginUnder5').text("Logins Under 5: " + result.loginUnder5);
+      $('#User').text("Users: " + result.Users);
+      $('#Organization').text("Organizations: " +result.Organizations);
+      $('#siteAdmin').text('Site Admin: ' + result.siteAdmin);
+
     });
   });
 }
