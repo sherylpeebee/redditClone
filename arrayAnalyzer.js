@@ -11,6 +11,7 @@
 
 
 function arrayAnalyzer(numbers){
+  // console.log(arguments);
   var numberArray = [];
   var analysis = {odds: 0, negative: 0, avg: 0, median: 0};
   for(var key in arguments) {
