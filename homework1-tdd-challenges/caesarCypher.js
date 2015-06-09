@@ -6,15 +6,22 @@
 // string is "Caesar Cipher" and num is 2 the output should be "Ecguct Ekrjgt".
 
 
-// function CaesarCipher(str,num) {
-//
-//   // code goes here
-//   return str + num;
-//
-// }
-//
-// CaesarCipher();
-//
+function CaesarCipher(str,num){
+  var charCodes = [];
+
+  for(var i=0; i<str.length; i++){
+  charCodes.push(str.charCodeAt(i) + num);
+  }
+
+
+  var encryption = [];
+  charCodes.forEach(function(e){
+  encryption.push(String.fromCharCode(e));
+  });
+  
+  return encryption.join('');
+}
+
 // Input = "Hello" & num = 4;
 // Output = "Lipps";
 // Input = "abc" & num = 0;
@@ -29,8 +36,8 @@ console.log(passFail(CaesarCipher("Hello", 4), "Lipps"));
 console.log(passFail(CaesarCipher("abc", 0), "abc"));
 //PASS
 console.log(passFail(CaesarCipher("yes", 27), "yes"));
-//PASS
-console.log(passFail(CaesarCipher("O.kA.y", 3), "r.Nd.b"));
 //FAIL
 console.log(passFail(CaesarCipher("O.kA.y", 3), "R.nD.b"));
-//PASS
+//FAIL
+console.log(passFail(CaesarCipher("O.kA.y", 3), "R1nD1|"));
+// PASS
