@@ -1,3 +1,4 @@
+
 // Using the JavaScript language, have the function MostFreeTime(strArr) read the
 // strArr parameter being passed which will represent a full day and will be filled
 // with events that span from time X to time Y in the day. The format of each event
