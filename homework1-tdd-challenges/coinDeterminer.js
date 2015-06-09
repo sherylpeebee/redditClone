@@ -21,13 +21,17 @@ var objArray = [];
   lesserValues.forEach(function(e){
     objArray.push({'coin':e, 'quotient':(num/e).toFixed(2)*1, 'remainder':num%e});
   });
-  console.log(objArray);
-  // objArray.forEach(function(obj){
-  //
-  // });
+  var leastCoinQuotient = objArray[objArray.length-1].quotient;
+  var leastCoinRemainder = objArray[objArray.length-1].remainder;
+  console.log(leastCoinQuotient, leastCoinRemainder);
+
+  if (leastCoinRemainder === 0){
+    return leastCoinQuotient;
+  }
 }
 
-CoinDeterminer(33);
+var result = CoinDeterminer(3);
+console.log(result);
 
 
 
