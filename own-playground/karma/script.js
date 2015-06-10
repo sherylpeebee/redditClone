@@ -1,6 +1,6 @@
 
 var leaderboard2 = function(data) {
-  return data.sort(function(a,b){return b.points-a.points;});
+  return data.data.sort(function(a,b){return b.points-a.points;});
 };
 
 function liCreate(name,points) {
@@ -16,7 +16,7 @@ $(document).ready(function() {
   // //problem here is with repeated DOM manipulation
 
   var studentArray = [];
-  $.getJSON('fake-api.json').success(function(data){
+  $.getJSON('http://192.168.1.35:8000/data.json').success(function(data){
     //using '$.getJSON' as opposed to $.ajax specifies
     //also, include both success and error handler to account for asynchrony.
     //i.e., if/when SUCCESS, execute some code block; if ERROR, execute another.
