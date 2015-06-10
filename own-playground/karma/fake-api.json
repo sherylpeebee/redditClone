@@ -1,0 +1,9 @@
+[
+  {"name":"ryan", "points": 14 },
+  {"name": "colin", "points": 7 },
+  {"name": "tania", "points": 9 },
+  {"name": "sheryl", "points": 10 },
+  {"name": "mike", "points": 4 }
+]
+
+/*all keys must be in STRING DOUBLE QUOTE form in JSON file!!*/
