@@ -1,9 +1,10 @@
 var doubler = function(a, b) {
-return a*2 + b*2;
-};
+  return 2 * a + 2 * b;
+}
 
-console.log(doubler(4, 2) === 12);
-console.log(doubler(1, 3) === 8);
-console.log(doubler(-1, 3) === 4);
+console.assert(doubler(4,2) === 12);
+console.assert(doubler(1,3) === 8);
+console.assert(doubler(-1,3) === 4);
 
-//console.assert didn't work in terminal
+console.assert(doubler("a", "b") === "aabb");
+console.assert(doubler("coding", "rocks") === "codingcodingrocksrocks");
