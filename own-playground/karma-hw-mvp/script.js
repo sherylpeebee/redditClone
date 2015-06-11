@@ -52,6 +52,8 @@ $(document).ready(function() {
       var newPoints = $(this).val();
       console.log(newPoints);
       $$.modifyPointsFor(person.data("order"), newPoints);
+      $('.points') === newPoints;
+      window.location.reload();
     }
 
   });
