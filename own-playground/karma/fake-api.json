@@ -6,4 +6,4 @@
   {"name": "mike", "points": 4 }
 ]
 
-all keys must be in STRING DOUBLE QUOTE form in JSON file!!
+/*all keys must be in STRING DOUBLE QUOTE form in JSON file!!*/
