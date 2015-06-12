@@ -78,10 +78,14 @@ function numberMultiplier(a, b){
       if (b === prop){
          multiplier2 = val;
       }
-
     }
-    return multiplier2 * multiplier1;
-
+    var product = multiplier2 * multiplier1;
+    for (var newProp in numbers){
+      var newVal = numbers[newProp];
+      if(product === newVal){
+        return newProp;
+      }
+    }
 }
 console.log(numberMultiplier('three', 'two'));
 
