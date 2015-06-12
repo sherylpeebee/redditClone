@@ -17,32 +17,43 @@
 // console.assert(nextFib(1597) === 2584);
 // console.assert(nextFib(21) === 34);
 
-
 function decode(args) {
-  var word = [];
+  var wordArr = [];
   var argsArray = [];
+  var val;
   for (var prop in arguments){
-    var val = arguments[prop];
+    val = arguments[prop];
     argsArray.push(val);
   }
+    if(typeof val === 'string' ){
+      return decodeWord();
+    }
+  function decodeWord(){
   var brokenString = argsArray.join('').split('');
 
   for (var i = 0; i < brokenString.length + 2; i += 2){
-    word.push(brokenString[i]);
+    wordArr.push(brokenString[i]);
   }
-  var loop = function(){
-    word.pop();
-    for(var j = i - (i-1); j<brokenString.length; j+=2){
-      word.push(brokenString[j]);
-
+  function loop(){
+    wordArr.pop();
+    for(var j = i - (i-1); j < brokenString.length; j += 2){
+      if (wordArr.length !== brokenString.length){
+      wordArr.push(brokenString[j]);
+      }
+      else {
+        return;
+      }
     }
-      var result = word.join('');
-      console.log(result); 
-  };
-  if(word[word.length - 1] === undefined){
+  }
+  if(wordArr[wordArr.length - 1] === undefined){
     loop();
   }
+      var result = wordArr.join('');
+
+      console.log(result);
+  }
 }
+
 
 console.log(decode("ci", "on", "dg"));
 //"coding"
