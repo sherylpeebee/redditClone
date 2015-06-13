@@ -29,7 +29,7 @@ CH.sum = function sum(a, b){
  return Array.prototype.reduce.call(arguments, function(total, e){
    return total + e || 0;
  }, 0);
- }
+ 
 };
 
 describe('the sum function', function(){
