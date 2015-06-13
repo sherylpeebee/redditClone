@@ -6,9 +6,19 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -20,25 +30,33 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+
+
+        <div class="jumbotron">
+          <div id="h1-border">
+            <h1>Meta Counter</h1>
+          </div>
+        </div>
         <form>
           <textarea id="data" cols="80" rows="10">
           </textarea>
         </form>
 
+
         <p id="template">
-          <div>
+          <div class="counts">
             Characters: <span id="characters"></span>
           </div>
-          <div>
+          <div class="counts">
             Words: <span id="words"></span>
           </div>
-          <div>
+          <div class="counts">
             Spaces: <span id="spaces"></span>
           </div>
-          <div>
+          <div class="counts">
             Numbers: <span id="numbers"></span>
           </div>
-          <div>
+          <div class="counts">
             Paragraphs: <span id="paragraphs"></span>
           </div>
         </p>
