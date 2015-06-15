@@ -1,7 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato);
-@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
-@import url(http://fonts.googleapis.com/css?family=Oswald);
-
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,400);
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -99,44 +96,127 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-body {
-  background-color: yellow;
+body#body{
+  background-color: rgb(122, 40, 70)
 }
-
-h1 {
+.page-header{
+  font-family: 'Source Code Pro';
   text-align: center;
-  font-family: 'Oswald'
-}
-/*#h1-border{
-  border-bottom: solid 3px black
-}*/
-
-#data {
-  height: 10%;
-  border: 5px solid black;
-  background-color: white;
-  color: black;
-  font-family: 'Lato';
-  position: fixed;
-  bottom: 0;
-  width: 100%
+  font-size: 3em;
+  color: #2D0F34;
+  background-color: rgb(233, 127, 225);
 }
 
-.counts {
-  margin-left: 26%;
-  font-family: 'Oswald';
-  font-weight: bold;
-  font-size: 130%
-
+#calc-wrapper{
+  height: 330px;
+  width: 19%;
+  border: 5px solid #2D0F34;
+  margin: auto;
+  margin-top: 96px;
+  border-radius: 4%;
+  color: #2D0F34;
+  font-family: 'Source Code Pro';
+}
+input#input{
+    height: 74px;
+    width: 233px;
+    background-color: rgba(205, 110, 206, 0.5);
+    border-top-left-radius: 4%;
+    border-top-right-radius: 4%;
+    text-align: right;
+    font-size: 4em;
+}
+div#plus-minus {
+  font-size: 146%;
+  text-align: left;
+}
+#row-1 {
+  height: 50px;
+  background-color: aquamarine;
+  width: 234px;
+  position: relative;
+  left: 15px;
+}
+#row-2 {
+  height: 50px;
+  background-color: aquamarine;
+  width: 234px;
+  position: relative;
+  left: 15px;
+}
+#row-3 {
+  height: 50px;
+  background-color: aquamarine;
+  width: 234px;
+  position: relative;
+  left: 15px;
+}
+#row-4 {
+  height: 48px;
+  background-color: aquamarine;
+  width: 234px;
+  position: relative;
+  left: 15px;
+  top: 0px;
+  bottom: 3px;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  }
+#row-5 {
+  height: 48px;
+  background-color: aquamarine;
+  width: 234px;
+  position: relative;
+  left: 15px;
+  top: 0px;
+  bottom: 3px;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  }
+.col-xs-3 {
+  height: 50px;
+  width: 15%;
+  /*background-color: rgba(232, 13, 223, 0.7);*/
+  background-color: rgba(199, 20, 176, 0.7);
+  border: 1px solid  black;
+  font-size: 2em;
+  text-align: center;
+  /*color: rgba(27, 5, 33, 0.9)*/
+  }
+.col-xs-6 {
+  height: 50px;
+  width: 15%;
+  top: -2px;
+  border-bottom-left-radius: 7%;
+  /*background-color: rgba(232, 13, 223, 0.7);*/
+  background-color: rgba(199, 20, 176, 0.7);
+  border: 1px solid  black;
+  border-top: 2px solid black;
+  font-size: 2em;
+  text-align: center;
+  color: rgba(27, 5, 33, 0.9)
   }
 
-.jumbotron{
-  background-color: tomato;
-  border: solid 8px black;
-  /*border-top: solid 8px black;*/
+div#decimal {
+  top: -4%;
+  border-top: 2px solid black;
 }
+div#equals {
+  top: -4%;
+  border-top: 2px solid black;
 
+}
+  div.operator{
+    background-color: rgba(77, 157, 35, 0.4);
+    color: black;
+  }
+
+.purple-highlight{
+  background-color: darkmagenta;
+}
+.green-highlight{
+color: rgb(20, 50, 157);
+}
 
 
 
