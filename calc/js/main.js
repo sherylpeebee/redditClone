@@ -40,12 +40,17 @@ function init () {
 
        numSet.push(float);
        numSet.push(operatorVal);
-       console.log(numSet);
+
       numStrings = [];
       switch (operatorVal) {
         case "%":
         $("#input").val(percentage());
-        console.log(operatorVal);
+        numSet.shift();
+        numSet.shift();
+        var percentInt = parseFloat($("#input").val());
+        numSet.push(percentInt);
+        console.log(numSet);
+        // console.log(operatorVal);
           break;
         case "+/-":
         var negativeVal = $("#input").val() * -1;
@@ -53,24 +58,34 @@ function init () {
           break;
         case "=":
 
-        console.log(numSet, "equal clicked");
+        numSet.pop();
         equals();
-        console.log(numSet);
+        console.log('equals');
+        console.log('numSet after equal pop', numSet);
         // return numSet;
           break;
         }
       function equals(){
+        if(typeof numSet[1] === "number"){
+          var op = numSet[2]
+          numSet.splice(2, 1, op);
+          console.log("numSet after splice", numSet);
+        }else {
        var num1 = numSet[0];
        var num2 = numSet[2];
        switch(numSet[1]){
        case "+":
          result = num1 + num2;
          $('#input').val(result);
+         numSet = [];
+         numSet.push(result);
          break;
        case  '-':
          result = num1 - num2;
          $('#input').val(result);
-         console.log(result);
+         numSet = [];
+         numSet.push(result);
+         console.log(numSet);
          break;
        case  '÷':
          result = num1 / num2;
@@ -82,6 +97,8 @@ function init () {
          break;
          }
        }
+
+        }
       //   function operatorDelegate(){
       //   switch (parsedOp) {
       //     case "%":
