@@ -15,16 +15,9 @@ function init () {
       var num;
       var numText = $(this).attr("value");
       $("#all-clear").text("C");
-      // $(".purple-buttons").removeClass('purple-highlight');
-      // $(this).addClass('purple-highlight');
       numStrings.push(numText);
       var numToString = numStrings.join('');
-
-      // console.log(numStrings);
-
       float = parseFloat(numToString);
-      // console.log('float: ', float);
-      // console.log(numText);
       $('#input').val(float);
     });
   };
@@ -35,45 +28,45 @@ function init () {
 
 
   var operation = function(){
-    $(".green-buttons, [value = '%'], [value = '+/-']").on("click", function(){
+    $(".operator.green-buttons, [value = '%'], [value = '+/-']").on("click", function(){
+      console.log(this);
       var operatorVal = $(this).attr("value");
 
        numSet.push(float);
+       console.log(operatorVal);
+       
        numSet.push(operatorVal);
 
       numStrings = [];
       switch (operatorVal) {
         case "%":
-        $("#input").val(percentage());
-        numSet.shift();
-        numSet.shift();
-        var percentInt = parseFloat($("#input").val());
-        numSet.push(percentInt);
-        console.log(numSet);
-        // console.log(operatorVal);
+          $("#input").val(percentage());
+          numSet.shift();
+          numSet.shift();
+          var percentInt = parseFloat($("#input").val());
+          numSet.push(percentInt);
+          console.log(numSet);
           break;
         case "+/-":
-        var negativeVal = $("#input").val() * -1;
+          var negativeVal = $("#input").val() * -1;
         $("#input").val(negativeVal);
           break;
         case "=":
-
-        numSet.pop();
-        equals();
-        console.log('equals');
-        console.log('numSet after equal pop', numSet);
-        // return numSet;
+          numSet.pop();
+          equals();
+          console.log('equals');
+          console.log('numSet after equal pop', numSet);
           break;
         }
       function equals(){
         if(typeof numSet[1] === "number"){
-          var op = numSet[2]
+          var op = numSet[2];
           numSet.splice(2, 1, op);
           console.log("numSet after splice", numSet);
         }else {
-       var num1 = numSet[0];
-       var num2 = numSet[2];
-       switch(numSet[1]){
+         var num1 = numSet[0];
+         var num2 = numSet[2];
+         switch(numSet[1]){
        case "+":
          result = num1 + num2;
          $('#input').val(result);
@@ -87,39 +80,24 @@ function init () {
          numSet.push(result);
          console.log(numSet);
          break;
-       case  '÷':
+       case  '/':
          result = num1 / num2;
+         console.log("numSet[1] after divide", numSet[1]);
+         console.log(result);
+         numSet = [];
+         numSet.push(result);
          $('#input').val(result);
          break;
-       case 'x':
+       case '*':
          result = num1 * num2;
+         numSet = [];
+         numSet.push(result);
          $('#input').val(result);
          break;
          }
        }
 
-        }
-      //   function operatorDelegate(){
-      //   switch (parsedOp) {
-      //     case "%":
-      //     $("#input").val(percentage());
-      //     console.log(operatorVal);
-      //       break;
-      //   // case "+":
-      //   // console.log(numSet);
-      //   //   break;
-      //   // case "-":
-      //   //
-      //   //   break;
-      //   // case "/":
-      //   //
-      //   //   break;
-      //   // case "*":
-      //   //
-      //   //   break;
-      //   // default:
-      //   }
-      // }
+      }
 
 
     });
@@ -140,6 +118,6 @@ function init () {
       console.log("numStrings after 2 clear", numStrings);
       clearClicks = 0;
       }
-      // console.log(clearClicks);
+
     });
   };

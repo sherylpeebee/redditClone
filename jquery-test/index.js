@@ -35,10 +35,10 @@ var tableData = [];
       titles.keyInObj = keys;
     }
   });
-console.log(ages);
+
     $("table").find("tr").each(function(index, element){
       $(element).append(ages[index]);
-      
+
     });
 
     $("table").find("tr").each(function(index, element){
@@ -48,12 +48,13 @@ console.log(ages);
   var headers = keys;
   var theaders = [];
   headers.forEach(function(header){
-    var theader = $("<th>"+ header + "</th>");
+    var theader = $("<th>", {text: header, id: header});
+    //added id to object; only had text b4-- id: easier to ref in query
     theaders.push(theader);
   });
   $("thead").append(theaders);
 
-  $(document).find("#age").on("click", function(){
-    console.log(this);
+  $("body").on("click", "#name, #age, #location",  function(){
+    console.log($(this).find('tr '));
   });
 });
