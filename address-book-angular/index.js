@@ -1,13 +1,13 @@
-$(document).ready(function(){
-  $("#submit").on("click", function(){
-    // var name = $("#name").val();
-    // console.log(name);
-    // var email = $("#email").val();
-    // console.log(email);
-    // var mobile = $("#mobile").val();
-    // console.log(mobile);
-  });
-});
+// $(document).ready(function(){
+//   $("#submit").on("click", function(){
+//
+//     $("input").on("keyup", function(e){
+//       if(e.which == 13){
+//         something.editable = false;
+//       }
+//     });
+//   });
+// });
 
 
 angular.module("Contacts", ["angular-md5", "xeditable"])
@@ -30,6 +30,14 @@ angular.module("Contacts", ["angular-md5", "xeditable"])
       if(!something.editable){
          something.editable = true;
       }
+
+      $(document).ready(function(){
+          $("input").on("keyup", function(e){
+            if(e.which == 13){
+              something.editable = false;
+            }
+          });
+        });
       console.log(something.editable);
     };
 });
