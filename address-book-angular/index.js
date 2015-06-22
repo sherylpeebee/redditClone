@@ -15,7 +15,7 @@ angular.module("Contacts", ["angular-md5", "xeditable"])
   editableOptions.theme = 'yeti'; // bootstrap3 theme. Can be also 'bs2', 'default'
 })
   .controller("ContactsCtrl", function($scope, md5){
-    $scope.contact = { name: "", gravatar: "", email: "",  phone: ""};
+
     $scope.contactsArr = [
       {name: "Tania Leonian", email: "tania.dev77@gmail.com", phone: "510-798-3716", editable: false},
       {name: "Lionel Briones", email: "lionelbriones@gmail.com", phone: "", editable: false},
@@ -24,6 +24,7 @@ angular.module("Contacts", ["angular-md5", "xeditable"])
     $scope.addContact = function(obj){
       $scope.contactsArr.push(obj);
       console.log($scope.contactsArr);
+      $scope.contact = { name: "", gravatar: "", email: "",  phone: ""};
     };
     $scope.editable = function(something){
       if(!something.editable){
