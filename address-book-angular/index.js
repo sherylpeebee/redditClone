@@ -10,16 +10,26 @@ $(document).ready(function(){
 });
 
 
-angular.module("Contacts", ["angular-md5"])
+angular.module("Contacts", ["angular-md5", "xeditable"])
+.run(function(editableOptions) {
+  editableOptions.theme = 'yeti'; // bootstrap3 theme. Can be also 'bs2', 'default'
+})
   .controller("ContactsCtrl", function($scope, md5){
-    $scope.contact = { name: "Summer Jenkins", gravatar: "poop", email: "summer_jenkins@sbcglobal.net",  phone: "916-740-4008"};
+    $scope.contact = { name: "", gravatar: "", email: "",  phone: ""};
     $scope.contactsArr = [
-      {name: "Tania Leonian", email: "tania.dev77@gmail.com", phone: "510-798-3716"},
-      {name: "Lionel Briones", email: "lionelbriones@gmail.com", phone: ""},
-      {name: "Samer Buna", email: "samer.buna@gmail.com", phone: ""}
+      {name: "Tania Leonian", email: "tania.dev77@gmail.com", phone: "510-798-3716", editable: false},
+      {name: "Lionel Briones", email: "lionelbriones@gmail.com", phone: "", editable: false},
+      {name: "Samer Buna", email: "samer.buna@gmail.com", phone: "", editable: false}
     ];
     $scope.addContact = function(obj){
       $scope.contactsArr.push(obj);
       console.log($scope.contactsArr);
+    };
+
+    $scope.editable = function(something){
+      if(!something.editable){
+         something.editable = true;
+      }
+      console.log(something.editable);
     };
 });
