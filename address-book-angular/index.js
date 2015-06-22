@@ -21,7 +21,7 @@ angular.module("Contacts", ["angular-md5", "xeditable"])
       {name: "Lionel Briones", email: "lionelbriones@gmail.com", phone: "", editable: false},
       {name: "Samer Buna", email: "samer.buna@gmail.com", phone: "", editable: false}
     ];
-    $scope.addContact = function(obj){
+    $scope.addContact = function(obj){ 
       $scope.contactsArr.push(obj);
       console.log($scope.contactsArr);
     };

@@ -22,7 +22,7 @@
   padding-right: 10px;
   width: 598px;
 }
-/*
-#addSearch{
-  float: left;
-}*/
+a:hover, a:focus {
+  color: #00526e;
+  text-decoration: none;
+}
