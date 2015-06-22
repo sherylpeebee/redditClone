@@ -21,16 +21,14 @@ angular.module("Contacts", ["angular-md5", "xeditable"])
       {name: "Lionel Briones", email: "lionelbriones@gmail.com", phone: "", editable: false},
       {name: "Samer Buna", email: "samer.buna@gmail.com", phone: "", editable: false}
     ];
-    $scope.addContact = function(obj){ 
+    $scope.addContact = function(obj){
       $scope.contactsArr.push(obj);
       console.log($scope.contactsArr);
     };
-
     $scope.editable = function(something){
       if(!something.editable){
          something.editable = true;
       }
-
       $(document).ready(function(){
           $("input").on("keyup", function(e){
             if(e.which == 13){
@@ -39,5 +37,8 @@ angular.module("Contacts", ["angular-md5", "xeditable"])
           });
         });
       console.log(something.editable);
+    };
+    $scope.deleteContact = function(index){
+      $scope.contactsArr.splice(index, 1);
     };
 });

@@ -33,6 +33,9 @@
     <table class="table table-hover">
       <thead>
         <th >
+          Delete Contact
+        </th>
+        <th >
           Name
         </th>
         <th >
@@ -50,6 +53,9 @@
       </thead>
       <tbody>
         <tr ng-repeat= "contact in contactsArr | filter: search" ng-dblclick="editable(contact)">
+          <td>
+            <button class="btn btn-xs btn-danger" type="button" name="button" ng-click="deleteContact($index)">delete</button>
+          </td>
           <td ng-hide="contact.editable">
             {{contact.name}}
           </td>
