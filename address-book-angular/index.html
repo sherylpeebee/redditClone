@@ -57,13 +57,13 @@
             <img src="http://www.gravatar.com/avatar/{{ contact.email | gravatar }}">
           </td>
           <td ng-hide="contact.editable">
-            {{contact.email}}
+            <a href="mailto:{{contact.email}}">{{contact.email}}</a>
           </td>
           <td ng-show="contact.editable">
             <input ng-model="contact.email" ng-keyup="$event.keyCode === 13  (todo.editing = false)"></input>
           </td>
           <td ng-hide="contact.editable">
-            {{contact.phone}}
+            <a href="tel:{{contact.phone}}">{{contact.phone}}</a>
           </td>
           <td ng-show="contact.editable">
             <input ng-model="contact.phone" ng-keyup="$event.keyCode === 13  (todo.editing = false)"></input>
