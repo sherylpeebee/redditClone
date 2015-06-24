@@ -3,6 +3,7 @@ var fs = require("fs"),
     request = require('request'),
     url = require('url'),
     md5 = require('MD5'),
+    Calc = require('./Calc'),
     exec = require("child_process").exec;
 
     http.createServer(responseHandler).listen(8888);
@@ -17,7 +18,6 @@ function responseHandler(req, res) {
     var email = md5Arr[2];
     var hash = md5(email);
     var result = "www.gravatar.com/avatar/" + hash;
-    // console.log(result);
     res.write(result);
     res.end("");
   }
@@ -42,7 +42,6 @@ function responseHandler(req, res) {
       });
       var avg = sum/wordsArray.length;
       console.log(words + ' words', characters + ' characters', avg + ' chars avg word length', spaces + ' spaces');
-      // res.write(words + ' words', characters + ' characters', avg + ' chars avg word length', spaces + ' spaces');
       return {words: words, characters:characters, avg: avg, spaces: spaces};
     };
     console.log(superCounter(sentence));
@@ -50,53 +49,11 @@ function responseHandler(req, res) {
     res.end("");
   }
 
+  //<------------------ review this file inclusion -------------------->
   else if (req.url.match("/Calc")){
     var calArr = req.url.split("/");
-    var num1 = parseInt(calArr[2].match(/^\d+/)[0]);
-    var num2 = parseInt(calArr[2].match(/\d+$/)[0]);
-    var equation = calArr.pop();
-    console.log("equation: "+ equation);
-    var opArray = equation.match(/[\*/%+-]+/);
-    console.log("opArray: "+opArray);
-    var op = opArray[0];
-    switch (op) {
-      case "+":
-      var sum = num1+num2;
-      console.log(JSON.stringify(sum));
-      res.write(JSON.stringify({sum: sum}));
-      res.end("");
-        break;
-      case "-":
-      var difference = num1-num2;
-      console.log(JSON.stringify(difference));
-      res.write(JSON.stringify({difference: difference}));
-      res.end("");
-        break;
-      case "/":
-      var quotient = num1/num2;
-      console.log(JSON.stringify(quotient));
-      res.write(JSON.stringify({quotient: quotient}));
-      res.end("");
-        break;
-      case "x":
-      var product = num1*num2;
-      console.log(JSON.stringify(product));
-      res.write(JSON.stringify({product: product}));
-      res.end("");
-        break;
-      case "*":
-       product = num1*num2;
-      console.log(JSON.stringify(product));
-      res.write(JSON.stringify({product: product}));
-      res.end("");
-        break;
-
-
-    }
+    Calc.doMath(calArr, res);
   }
-
-
-
     // console.log(req.url);
     res.writeHead(200, {"Content-Type": "text/html"});
     res.end("");
