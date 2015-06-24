@@ -24,6 +24,7 @@ angular.module("Contacts", ["angular-md5", "xeditable"])
     $scope.addContact = function(obj){
       $scope.contactsArr.push(obj);
       console.log($scope.contactsArr);
+      localStorage.setItem("contact", JSON.stringify(obj));
       $scope.contact = { name: "", gravatar: "", email: "",  phone: ""};
     };
     $scope.editable = function(something){
