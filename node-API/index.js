@@ -24,9 +24,9 @@ function responseHandler(req, res) {
 
   else if (req.url.match("/Counts")){
     var sliced = req.url.replace("/Counts", "");
-    // console.log(sliced);
+    console.log(sliced);
     var sentence = sliced.replace(/\W+/gmi, " ");
-    // console.log(sentence);
+    console.log(sentence);
 
     var superCounter = function(string){
       var characters = sentence.length;
