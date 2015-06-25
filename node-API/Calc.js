@@ -7,6 +7,7 @@ exports.doMath = function(arr, calcRes){
   var opArray = equation.match(/[\*/%+-]+/);
   console.log("opArray: "+opArray);
   var op = opArray[0];
+  console.log(op);
   switch (op) {
     case "+":
     var sum = num1+num2;

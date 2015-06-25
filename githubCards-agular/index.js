@@ -11,4 +11,3 @@ angular.module("githubCards", [])
      console.log(status);
    });
   };
-}]);

@@ -4,7 +4,12 @@ var fs = require("fs"),
     url = require('url'),
     md5 = require('MD5'),
     Calc = require('./Calc'),
+    fb = require("firebase"),
     exec = require("child_process").exec;
+
+    // var fbRef = new Firebase("https://node-aypeeeyett.firebaseio.com/");
+    // var fbEntriesRef = fbRef.child("entries");
+
 
     http.createServer(responseHandler).listen(8888);
 
@@ -60,3 +65,13 @@ function responseHandler(req, res) {
 
 
 }
+
+//<----------------- reconfig to work with my code ------------------------>
+// fbEntriesRef.push({
+//   apiEndPoint: apiEndpoint,
+//   apiValue: apiValue,
+//   apiResult: apiResult,
+//   timestamp: Firebase.ServerValue.TIMESTAMP,
+//   ipAddress: req.connection.remoteAddress,
+//   userAgent: req.headers['user-agent']
+// });
