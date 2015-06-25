@@ -1,0 +1,15 @@
+
+<a href="#/new" class="btn btn-success">Add New Link</a>
+<div class="media" ng-repeat="crud in links track by $index">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><a href="{{crud.url}}">{{crud.title}}</a></h4>
+    {{crud.url}}
+    description about the link here, click for more information.
+    <button type="button" name="button" class="btn btn-danger btn-sm" ng-click="deleteLink($index)">Delete</button>
+  </div>
+</div>
